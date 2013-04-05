@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+
+<head>
+	<title>SPI and SPA Phone Directory </title>
+	<meta name="Author" content="Nicole Tester">
+	<link rel="stylesheet" type="text/css" href="http://www.spimageworks.com/css/phone.css">
+        
+        <script type="text/javascript" src="http://www.spimageworks.com/js/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
+        
+        <script LANGUAGE="JavaScript">
+        <!--
+        function popUp(URL) {
+            day = new Date();
+            id = day.getTime();
+            eval("popup" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=700,height=650');");
+        }
+        -->
+        function checkEnter(e){ // e is event object passed from function invocation
+             var characterCode // literal character code will be stored in this variable
+
+             if(e && e.which){ // if which property of event object is supported (NN4)
+             e = e
+             characterCode = e.which //character code is in NN4's which property
+             }
+             else{
+                 e = event
+                 characterCode = e.keyCode //character code is in IE's keyCode property
+                 }
+
+                 if(characterCode == 13){ // if enter key
+                      document.forms[0].submit() // submit the form
+                      return false
+                 }
+                 else{
+                     return true
+                 }
+             }
+        
+        </script>
+	<script type="text/javascript" language="JavaScript" src="http://www.spimageworks.com/js/stylesheet.js"></script>
+</head>
+
+<body>
+
+
+<div id="global_menu_area">
+	<script type="text/javascript" language="JavaScript" src="http://www.spimageworks.com/js/global_menu.js"></script>
+</div>
+<br>
+<TABLE BORDER = 0 WIDTH = 100%>
+<TR>
+<TD ALIGN = RIGHT>
+<img src="http://www.spimageworks.com/people/ntester/images/SPALogo.jpg">
+</TD>
+</TR>
+</TABLE>
+	<h2>Phone Directory</h2>
+	<hr>
+<div id="content_area">
+
+	<form method="post"
+		action="PhoneDirectory.jsp"
+		enctype="application/x-www-form-urlencoded">
+		Enter name, extension, or room number: &nbsp;&nbsp;
+		<input type=text name="search" value="malmela"> &nbsp;&nbsp;
+		with photos: <input type="checkbox" name="photo" CHECKED> &nbsp;&nbsp
+		<input class="button" type="submit" name="submit">
+	</form>
+
+
+
+<h3>Search Results: </h3>
+
+<div id="directory_area">
+<ul>
+
+
+
+
+<li>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td>
+		<div id="thumbnail">
+		<img src="http://pbot.spimageworks.com/pts/jsp/Photo.jsp?pk_entity=D839B09BDD5F7242E0401DAC490465CD" height="100" width="80"></div>
+        
+       
+    <a  href="PhoneDetail.jsp?email=malmela" onmouseover="return overlib(' <table border = 1 bordercolor=black cellspacing= 0 cellpadding=0 bgcolor=white><th>Group</th><th> Show </th> <th> Title </th><tr cellpadding=1><td>&nbsp;gr-cl2</td><td><b><a href=CrewingContact.jsp>cl2</a></b></td></td><td>&nbsp;Member</td><tr cellpadding=1><td>&nbsp;gr-cl2-anim</td><td><b><a href=CrewingContact.jsp>cl2</a></b></td></td><td>&nbsp;Character Animator</td><tr cellpadding=1><td>&nbsp;gr-dig</td><td>&nbsp </td><td>&nbsp;Member</td><tr cellpadding=1><td>&nbsp;gr-dig_animators</td><td>&nbsp </td><td>&nbsp;Member</td><tr cellpadding=1><td>&nbsp;gr-dig_artists</td><td>&nbsp </td><td>&nbsp;</td></tr></table>', WRAP);"  onmouseout="return nd();"> <span class="label"> Details</span> </a>  <img title="IM Presence" src="http://imserver.spimageworks.com:9090/plugins/presence/status?jid=malmela@imserver.spimageworks.com" /> <br>
+    
+</td><td>
+	<b><a href="mailto:malmela@imageworks.com">Manuel Almela</a></b> <br>
+	<span class="label">WORK:</span>  <br>
+	<span class="label">EXT:</span>  <br>
+	<span class="label">EMAIL:</span> <a href="mailto:malmela@imageworks.com">malmela</a> <br>
+	<span class="label">ROOM:</span> <a href="javascript:popUp('Mapper.jsp?building=CSOB&room=360 C')">CSOB 360 C</a> <br>
+	<span class="label">PAGER:</span>  <br>
+	<span class="label">HOME:</span>  <br>
+	<span class="label">CELL:</span>  <br>
+
+</td></tr></table>
+<br><br><br><br>
+</li>
+
+</ul>
+</div>
+
+
+
+<div id="version_area">
+<br><br><br><br><br>
+<hr>
+<br>
+<br>
+
+Email your group to report discrepancies:
+
+<a href="mailto:scott@imageworks.com">SPI</a>
+
+, <a href="mailto:imartinez@imageworks.com">SPA
+
+</a>or <a
+
+ href="mailto:tbilezikjian@imageworks.com">Interactive</a><br>
+
+<br><br>
+<!-- Printable versions (Requires Adobe Acrobat Reader):
+<ul>
+	<li><a href="http://www.spimageworks.com/dept/sys/docs/hotlist.pdf" target="_top">Hotlist in PDF Format</a>
+	<li><a href="http://www.spimageworks.com/dept/sys/docs/hotmisc.pdf" target="_top">Hotlist Miscellaneous Numbers in PDF Format</a>
+	<li><a href="http://www.spimageworks.com/dept/sys/docs/hotdesk.pdf" target="_top">Hotlist Desktop Helper in PDF Format</a>
+</ul> -->
+</div>
+</div>
+
+<div id="footer_area">
+	<script language="JavaScript" src="http://www.spimageworks.com/js/footer.js"></script>
+</div>
+<div id="global_menu_area">
+	<script language="JavaScript" src="http://www.spimageworks.com/js/global_menu.js"></script>
+</div>
+
+</body>
+</html>
+
