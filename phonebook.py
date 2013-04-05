@@ -14,26 +14,41 @@ class SPIPhonebook():
     def __init__(self):
         pass
 
-    def open_url(self, query):
-        #file_name = open(url, 'r')
-        #lines = file_name.readlines()
-        #file_name.close()
-        #print lines
-        raw_url = "http://pbot.spimageworks.com/pts/jsp/PhoneDirectory.jsp?" +
-                  "photo=off&search={0}".format(query) +
-                  "&SUBMIT=Go&site=spi&client=spi" +
-                  "&proxystylesheet=spi&output=xml_no_dtd"
+    def getUrl(self, query):
+        url = "http://pbot.spimageworks.com/pts/jsp/PhoneDirectory.jsp?" \
+                  "photo=off&search={0}" \
+                  "&SUBMIT=Go&site=spi&client=spi" \
+                  "&proxystylesheet=spi&output=xml_no_dtd".format(query)
 
-        print raw_url
+        return url
 
-    def parse_options(self, args):
+    def getHtml(self, url):
+        file_name = open(url, 'r')
+        lines = file_name.readlines()
+        file_name.close()
+        return lines
+        """
+        response = urllib2.urlopen(url)
+        return response.read()
+        """
+
+    def parseOptions(self, args):
         pass
 
-    def parse_html(self, option, element)
+    def parseHtml(self, html):
+        fields = ['EMAIL:']
+        for line in html:
+            for field in fields:
+                if field in line:
+                    print line
+
+    def getField(self, line, element):
         pass
+        
 
 
 
 
 pb = SPIPhonebook()
-pb.open_url('FOOOOOOO')
+#b.open_url('FOOOOOOO')
+pb.parseHtml(pb.getHtml('contact.txt'))
